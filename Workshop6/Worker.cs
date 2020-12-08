@@ -80,6 +80,7 @@ namespace Workshop6
             freeTool.Start();
             Thread wait = new Thread(this.Waiting);
             wait.Start();
+            this.Speak();
         }
 
         public void Break()
@@ -119,7 +120,7 @@ namespace Workshop6
 
         public void Speak()
         {
-            Console.WriteLine("I'm {0}, i have in my right hand : {1} {2} and in my left hand {3} and i am currently {4}. My neighbor is {5}", this.Name, this.Tools["right"].Name, this.Tools["right"].Status,  this.Tools["left"], this.Status, this.LeftNeighbor.Name);
+            Console.WriteLine("I'm {0}, i have in my right hand : {1} {2} and in my left hand {3} and i am currently {4}. My neighbor is {5}. My count is {6}", this.Name, this.Tools["right"].Name, this.Tools["right"].Status,  this.Tools["left"], this.Status, this.LeftNeighbor.Name, this.Done);
         }
     }
 }

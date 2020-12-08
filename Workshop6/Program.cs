@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Workshop6.Tools;
 
 namespace Workshop6
@@ -20,6 +21,16 @@ namespace Workshop6
              Wrench Wrc2 = new Wrench("Wrc2", Enums.ToolStatus.FREE);
 
             InitializeWorkers(W1, W2, W3, W4, Wrc1, Scr1, Wrc2, Scr2);
+
+            Thread w1 = new Thread(W1.Waiting);
+            Thread w2 = new Thread(W2.Waiting);
+            Thread w3 = new Thread(W3.Waiting);
+            Thread w4 = new Thread(W4.Waiting);
+
+            w1.Start();
+            w2.Start();
+            w3.Start();
+            w4.Start();
 
             W1.Speak();
             W2.Speak();
