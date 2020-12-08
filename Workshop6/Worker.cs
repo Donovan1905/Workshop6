@@ -22,6 +22,12 @@ namespace Workshop6
             this.status = workerStatus;
         }
 
+        public Worker LeftNeighbor
+        {
+            get { return this.leftNeigbhor; }
+            set { this.leftNeigbhor = value; }
+        }
+
         public List<Tool> Tools
         {
             get { return this.tools; }
@@ -55,6 +61,9 @@ namespace Workshop6
             this.Status = WorkerStatus.WAITING;
         }
 
-        public void 
+       public void GetTool()
+        {
+
+        }
     }
 }
